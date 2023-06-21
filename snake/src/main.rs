@@ -1,5 +1,3 @@
-#![feature(option_result_contains)]
-
 use std::{
     collections::VecDeque,
     fmt::Display,
@@ -172,11 +170,13 @@ impl Game {
                 || self.position.y < 0
                 || self.position.x >= self.width
                 || self.position.y >= self.height
-                || self.map[self.position.x as usize][self.position.y as usize]
-                    .contains(&Tile::Snake)
+                || matches!(
+                    self.map[self.position.x as usize][self.position.y as usize],
+                    Some(Tile::Snake)
+                )
             {
                 self.update(Msg::Close {
-                    message: format!("Game Over. Score: {}.", self.snake.len() - 1),
+                    message: format!("Game Over. Score: {}.\n", self.snake.len() - 1),
                 })?;
 
                 return Ok(());
@@ -288,6 +288,10 @@ fn main() -> Result<()> {
                     tx.send(read_key.clone())?;
                     last_key = read_key;
                 }
+            }
+
+            if game.close_requested {
+                break Ok(());
             }
         }
     });
