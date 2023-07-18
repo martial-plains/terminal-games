@@ -1,2 +1,9 @@
 [workspace]
-members = ["snake", "guess_a_number", "bagels", "rock_paper_scissors"]
+members = [
+    "bagels",
+    "dice_game",
+    "guess_a_number",
+    "rock_paper_scissors",
+    "snake",
+]
+resolver = "2"
