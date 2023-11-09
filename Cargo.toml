@@ -7,3 +7,10 @@ members = [
     "snake",
 ]
 resolver = "2"
+
+[workspace.dependencies]
+rand = "0.8.5"
+crossterm = "0.27.0"
+anyhow = "1.0.75"
+console = "0.15.7"
+terminal_size = "0.3.0"
