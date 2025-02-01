@@ -9,7 +9,7 @@ members = [
 resolver = "2"
 
 [workspace.dependencies]
-rand = "0.8.5"
+rand = "0.9.0"
 crossterm = "0.28.1"
 anyhow = "1.0.75"
 console = "0.15.7"
