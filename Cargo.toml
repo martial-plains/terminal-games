@@ -10,7 +10,7 @@ resolver = "2"
 
 [workspace.dependencies]
 rand = "0.9.0"
-crossterm = "0.28.1"
+crossterm = "0.29.0"
 anyhow = "1.0.75"
 console = "0.15.7"
 terminal_size = "0.4.0"
